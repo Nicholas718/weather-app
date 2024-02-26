@@ -19,3 +19,13 @@ describe("App", () => {
     expect(h1Element).toBeInTheDocument();
   });
 });
+
+describe("LocationDetails", () => {
+  it("renders the correct city and location props", () => {
+    const { getByText } = render(
+      <locationDetails city="Manchester" country="UK" />
+    );
+
+    expect(getByText("Manchester, UK")).toBeInstanceOf(HTMLHeadingElement);
+  });
+});
